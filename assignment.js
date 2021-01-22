@@ -83,8 +83,8 @@ function hotelCost(day) {
 // 4.recognizing the name of mega friend
 function megaFriend(friendsArray) {
 
-     //to tackle unexpected value
-    if (typeof friendsArray == "string" || typeof friendsArray == "number") {
+    //to tackle unexpected value
+    if (typeof friendsArray == "string" || typeof friendsArray == "number" || friendsArray.length == 0) {
         return "provide an array with all of your friends name";
     }
 
@@ -106,4 +106,5 @@ function megaFriend(friendsArray) {
 
     return largeName; //will provide large name 
 }
+
 
