@@ -1,6 +1,9 @@
 // https://github.com/FahimMontasir/simpleProblemSolving
 
-//calculating kilometer to meter
+
+
+
+// 1.calculating kilometer to meter
 function kilometerToMeter(kilometer) {
     var meter = kilometer * 1000;
 
@@ -14,10 +17,12 @@ function kilometerToMeter(kilometer) {
 
     return meter; //will provide meter
 }
-var result = kilometerToMeter(-1)
-console.log(result)
 
-// budget calculator
+
+
+
+
+// 2.budget calculator
 function budgetCalculator(watch, mobile, laptop) {
     var watchPrice = watch * 50;
     var mobilePrice = mobile * 100;
@@ -34,4 +39,71 @@ function budgetCalculator(watch, mobile, laptop) {
 
     return totalPrice; //will provide total budget
 }
-console.log(budgetCalculator(2, 2, 2));
+
+
+
+
+
+
+// 3.calculating hotel cost
+function hotelCost(day) {
+    if (day <= 10) {
+        var totalCost = day * 100;
+    }
+    else if (day <= 20) {
+        var first10DaysCost = 10 * 100;
+        var remainingDay = day - 10;
+        var discountedCost = remainingDay * 80;
+        totalCost = first10DaysCost + discountedCost;
+    }
+    else if (day > 20) {
+        first10DaysCost = 10 * 100;
+        var second10DaysCost = 10 * 80;
+        remainingDay = day - 20;
+        discountedCost = remainingDay * 50;
+        totalCost = first10DaysCost + second10DaysCost + discountedCost;
+    }
+
+    //to tackle unexpected value
+    if (typeof day == "string") {
+        return "put numbers only";
+    }
+    else if (day < 0) {
+        return "put positive numbers only";
+    }
+
+    return totalCost; //will provide total hotel cost
+}
+
+
+
+
+
+
+// 4.recognizing the name of mega friend
+function megaFriend(friendsArray) {
+
+     //to tackle unexpected value
+    if (typeof friendsArray == "string" || typeof friendsArray == "number") {
+        return "provide an array with all of your friends name";
+    }
+
+    //main functionality
+    else {
+        var largeLength = friendsArray[0].length;
+        var largeName = friendsArray[0];
+
+        for (var i = 0; i < friendsArray.length; i++) {
+            var letterCount = friendsArray[i].length;
+
+            if (letterCount > largeLength) {
+                largeLength = letterCount;
+                largeName = friendsArray[i];
+            }
+
+        }
+    }
+
+    return largeName; //will provide large name 
+}
+
